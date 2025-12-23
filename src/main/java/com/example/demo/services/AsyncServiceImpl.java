@@ -15,13 +15,11 @@ public class AsyncServiceImpl implements AsyncService {
     private final ObjectMapper objectMapper;
 
     @Override
-    @Async // El método corre en un hilo separado
+    @Async
     public void procesarEnvioExterno(Cliente cliente, String traceId) {
         try {
-            // Simulación de latencia de red
             Thread.sleep(2000);
 
-            // Conversión a JSON (Requisito técnico)
             String jsonLog = objectMapper.writeValueAsString(cliente);
 
             log.info("--- SIMULACIÓN SISTEMA EXTERNO ---");

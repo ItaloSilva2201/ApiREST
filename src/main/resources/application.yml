@@ -8,7 +8,7 @@ spring:
       path: /h2-console
   datasource:
     url: jdbc:h2:mem:clientesdb
-    driver-class-name: org.h2.Driver # <--- Usa el driver-class-name
+    driver-class-name: org.h2.Driver
     username: sa
     password: password
   jpa:

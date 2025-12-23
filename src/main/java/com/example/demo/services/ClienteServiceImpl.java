@@ -29,7 +29,6 @@ public class ClienteServiceImpl implements ClienteService{
 
         cliente = clienteRepository.save(cliente);
 
-        // Disparar proceso asíncrono
         asyncService.procesarEnvioExterno(cliente, traceId);
 
         return new ClienteResponseDto(
@@ -47,7 +46,6 @@ public class ClienteServiceImpl implements ClienteService{
                 ));
     }
 
-    // Método privado para evitar repetir código (DRY)
     private String formatearNombreCompleto(Cliente c) {
         return String.format("%s %s %s",
                 c.getNombre(),

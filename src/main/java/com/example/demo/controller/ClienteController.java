@@ -26,7 +26,6 @@ public class ClienteController {
             @RequestHeader("deviceId") String deviceId,
             @Valid @RequestBody ClienteRequestDto request) {
 
-        // El servicio se encargará de la lógica y el proceso asíncrono
         ClienteResponseDto response = clienteService.crear(request, traceparent);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
